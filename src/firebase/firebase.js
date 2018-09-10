@@ -23,7 +23,7 @@ const config = process.env.NODE_ENV === 'production'
   ? prodConfig
   : devConfig
 
-if (!firebase.app.length) {
+if (!firebase.apps.length) {
   firebase.initializeApp(config);
 }
 
