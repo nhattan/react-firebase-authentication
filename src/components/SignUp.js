@@ -41,6 +41,13 @@ class SignUpForm extends Component {
       error,
     } = this.state;
 
+    const isInvalid =
+      passwordOne !== passwordTwo ||
+      passwordOne === '' ||
+      passwordTwo === '' ||
+      email === '' ||
+      username === '';
+
     return (
       <form onSubmit={this.onSubmit}>
         <input
@@ -67,7 +74,7 @@ class SignUpForm extends Component {
           type="text"
           placeholder="Confirm Password"
         />
-        <button type="submit">
+        <button disabled={isInvalid} type="submit">
           Sign Up
         </button>
 
